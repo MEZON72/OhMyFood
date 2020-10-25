@@ -1,0 +1,18 @@
+$base-font-size: 16px !default;
+// COURS GRAFIKART MIXINS 10mn 45s
+// permet de redimensionner les margin / padding de façon dynamique (idéal pour les boutons)
+// STRIP UNIT SASS à copier depuis internet (unifie les unités px, em, rem...)
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+@function rem($size, $base: $base-font-size) {
+  @return 1rem * $size / strip-unit($base);
+}
+
+@function em($size, $base: $base-font-size) {
+  @return 1em * $size / strip-unit($base);
+}

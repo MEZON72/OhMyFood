@@ -1,0 +1,54 @@
+footer {
+  display: flex;
+  background-color: $primary;
+  justify-content: space-between;
+  align-items: center; /*CENTRE DANS LA HAUTEUR */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 2rem 1rem 2rem;
+  a {
+    display: block;
+    font-size: 1rem;
+    color: $secondary;
+    &:hover {
+      animation: wiggle 3s forwards;
+    }
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  3% {
+    transform: rotate(-2deg);
+  }
+  4% {
+    transform: rotate(2deg);
+  }
+  5% {
+    transform: rotate(-2deg);
+  }
+  6% {
+    transform: rotate(2deg);
+  }
+  7% {
+    transform: rotate(-2deg);
+  }
+  8% {
+    transform: rotate(2deg);
+  }
+  9% {
+    transform: rotate(-2deg);
+  }
+  10% {
+    transform: rotate(2deg);
+  }
+  11% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

@@ -1,0 +1,102 @@
+@mixin shadow {
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+@mixin degradeChic {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c67412+0,6e4ccc+100 */
+  background: $colorChic1; /* Old browsers */
+  background: -moz-linear-gradient(
+    left,
+    $colorChic1 0%,
+    $colorChic3 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    $colorChic1 0%,
+    $colorChic3 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    $colorChic1 0%,
+    $colorChic3 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c67412', endColorstr='#6e4ccc',GradientType=1 ); /* IE6-9 */
+  -webkit-background-clip: text; /*MASQUE POUR FAIRE APPARAITRE LE DEGRADE SUR LA TYPO*/
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin degradeDelice {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c67412+0,6e4ccc+100 */
+  background: $colorDelice1; /* Old browsers */
+  background: -moz-linear-gradient(
+    left,
+    $colorDelice1 0%,
+    $colorDelice2 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    $colorDelice1 0%,
+    $colorDelice2 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    $colorDelice1 0%,
+    $colorDelice2 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c67412', endColorstr='#6e4ccc',GradientType=1 ); /* IE6-9 */
+  -webkit-background-clip: text; /*MASQUE POUR FAIRE APPARAITRE LE DEGRADE SUR LA TYPO*/
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin degradePalette {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c67412+0,6e4ccc+100 */
+  background: $colorPalette1; /* Old browsers */
+  background: -moz-linear-gradient(
+    left,
+    $colorPalette1 0%,
+    $colorPalette2 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    $colorPalette1 0%,
+    $colorPalette2 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    $colorPalette1 0%,
+    $colorPalette2 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c67412', endColorstr='#6e4ccc',GradientType=1 ); /* IE6-9 */
+  -webkit-background-clip: text; /*MASQUE POUR FAIRE APPARAITRE LE DEGRADE SUR LA TYPO*/
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin scale {
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(1); /*--je pars de 100% --*/
+  transition-property: transform; /*-- applique la propriété transform à la transition --*/
+  transition: transform 1s, opacity 300ms 150ms;
+  &:hover {
+    opacity: 0.5;
+    transform: scale(1.25); /*--j'arrive à 125% --*/
+  }
+}
+
+@mixin sousTitre {
+  cursor: pointer;
+  &:hover > .filet {
+    transform: scaleX(1);
+    transition-property: transform; /*-- applique la propriété transform à la transition --*/
+    transition: transform 1s;
+  }
+}
+
+@mixin ancre {
+  font-size: 1.5rem;
+  display: block;
+
+  @include computer-only {
+    padding-top: 3rem;
+  }
+}

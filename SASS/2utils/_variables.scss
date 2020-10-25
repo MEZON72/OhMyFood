@@ -1,0 +1,53 @@
+$secondary: rgb(255, 255, 1);
+$primary: rgb(0, 128, 0);
+
+$secondaryStart: rgba(124, 124, 27, 0.288);
+$secondaryEnd: rgba(255, 255, 0, 1);
+
+$colorChic1: rgb(198 116 18);
+$colorChic2: rgb(165 103 153);
+$colorChic3: rgb(110 76 204);
+
+$colorPalette1: #41963c;
+$colorPalette2: #90d867;
+
+$colorDelice: rgb(237 239 239);
+$colorDelice1: rgb(2 49 223);
+$colorDelice2: rgb(516 141 251);
+
+$bgColor: (
+  note: rgb(250, 223, 219),
+  chic: rgb(255 245 254),
+  palette: rgb(253 253 253),
+  delice: rgb(237 239 239),
+);
+
+$pChic: (
+  entreChic: rgb(198 116 18),
+  platChic: rgb(165 103 153),
+  dessertChic: rgb(110 76 204),
+);
+
+$breakpoints: (
+  pad: (
+    415px,
+  ),
+  computer: (
+    800px,
+  ),
+);
+
+$fonts: (
+  note: (
+    "berkshire_swashregular",
+  ),
+  delice: (
+    "alluraregular",
+  ),
+  chic: (
+    "amerika_regular",
+  ),
+  palette: (
+    "arvobold_italic",
+  ),
+);

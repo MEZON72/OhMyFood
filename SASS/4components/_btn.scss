@@ -1,0 +1,30 @@
+.btn {
+  justify-content: center;
+  max-width: 60%;
+  margin: 3rem auto 8rem auto;
+  padding: 0.2rem 0.2rem 0.2rem 0.7rem;
+  border-radius: 0.3rem;
+  background-color: $primary;
+  a {
+    color: $secondary;
+    font-size: 1.3rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    &:hover + .points {
+      transform: scale(1.15);
+    }
+  }
+
+  @include pad-only {
+    margin: 2rem auto 8rem auto;
+    max-width: 13rem;
+  }
+}
+
+.points {
+  display: inline-block;
+  font-size: 1.3rem;
+  color: $secondary;
+  transform: scale(0.1);
+  transition: transform 400ms;
+}
