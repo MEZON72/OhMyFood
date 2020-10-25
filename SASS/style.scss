@@ -1,0 +1,255 @@
+/*-- ORDRE D IMPORT DES PARTIELS --*/
+@import "./2utils/variables.scss";
+@import "./2utils/functions.scss";
+@import "./2utils/mixins.scss";
+// @import "./7vendors";
+@import "./1base/zero.scss";
+@import "./1base/font.scss";
+@import "./1base/reset.scss";
+@import "./1base/responsive.scss";
+// @import "./4components";
+@import "./3layouts/header.scss";
+@import "./3layouts/footer.scss";
+@import "./4components/btn.scss";
+// @import "./5pages";
+// @import "./6themes";
+
+body {
+  font-size: $base-font-size; /* dimension de base de référence pour les textes des autres styles (rem) */
+  margin: 0px; /* Ecrase la margin de 6 pixels par défaut des navigateurs.*/
+  background-color: white;
+}
+
+/*//////////////////////////////////////////////////////// CSS INDEX FIRST MOBILE ////////////////////////////////////////////////////////*/
+
+.page {
+  height: 100%;
+  text-align: center;
+}
+
+.flex {
+  justify-content: center;
+
+  @include pad-only {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &--index {
+    @include pad-only {
+      display: flex;
+      margin: 0 auto 0 auto;
+      justify-content: center;
+    }
+  }
+}
+
+.nav {
+  margin: 1rem 0 0 0;
+  padding: 2rem 0 0.3rem 0;
+  @include shadow;
+
+  @include pad-only {
+    width: 40%;
+    max-width: 20rem;
+    height: 10rem;
+    margin: 0.5rem;
+  }
+
+  @include computer-only {
+    height: 25rem;
+    padding-top: 5rem;
+  }
+
+  &__bgPalette {
+    background-color: map-get($bgColor, palette);
+
+    &--linkPalette {
+      @include degradePalette;
+      @include ancre;
+      font-family: map-get($fonts, palette);
+      @include scale;
+    }
+  }
+
+  &__bgNote {
+    background-color: map-get($bgColor, note);
+
+    &--linkNote {
+      color: black;
+      @include ancre;
+      font-family: map-get($fonts, note);
+      @include scale;
+    }
+  }
+
+  &__bgChic {
+    background-color: map-get($bgColor, chic);
+
+    &--linkChic {
+      @include degradeChic;
+      @include ancre;
+      font-family: map-get($fonts, chic);
+      @include scale;
+    }
+  }
+
+  &__bgDelice {
+    background-color: map-get($bgColor, delice);
+
+    &--linkDelice {
+      @include degradeDelice;
+      @include ancre;
+      font-family: map-get($fonts, delice);
+      @include scale;
+    }
+  }
+}
+
+.carte {
+  visibility: hidden;
+
+  @include pad-only {
+    display: block;
+    visibility: visible;
+    font-family: serif;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+.logo {
+  visibility: hidden;
+  width: 0rem;
+  height: 0rem;
+
+  @include pad-only {
+    display: block;
+    visibility: visible;
+    width: 2rem;
+    height: auto;
+    margin: 0 auto 0 auto;
+  }
+}
+
+/*//////////////////////////////////////////////////////// CSS MENU FIRST MOBILE ////////////////////////////////////////////////////////*/
+
+.menu {
+  display: block;
+  padding-bottom: 60rem;
+  width: 100%;
+
+  @include pad-only {
+    width: 80%;
+    margin: 8rem auto 8rem auto;
+    padding: 2rem 2rem 5rem 2rem;
+    @include shadow;
+  }
+
+  &--bcgChic {
+    background-color: map-get($bgColor, chic);
+  }
+  &--bcgDelice {
+    background-color: map-get($bgColor, delice);
+  }
+  &--bcgPalette {
+    background-color: map-get($bgColor, palette);
+  }
+  &--bcgNote {
+    background-color: map-get($bgColor, note);
+  }
+}
+
+h1 {
+  font-size: 1.5rem;
+  padding: 3rem 0 1rem 0;
+}
+
+.name {
+  &--chic {
+    @include degradeChic;
+  }
+
+  &--delice {
+    @include degradeDelice;
+  }
+
+  &--palette {
+    @include degradePalette;
+  }
+}
+
+.sousTitre {
+  margin: 2rem 0 0.7rem 0;
+
+  img {
+    height: 0rem;
+    visibility: hidden;
+  }
+
+  &__name {
+    font-size: 1.2rem;
+    @include sousTitre;
+  }
+
+  @include pad-only {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      height: 1rem;
+      visibility: visible;
+    }
+  }
+}
+
+.filet {
+  display: block;
+  width: 10rem;
+  height: 1px;
+  margin: 0.5rem auto 0 auto;
+  background-color: rgba(111, 12, 12, 0.5);
+  transform: scaleX(0);
+  transform-origin: left;
+  // transition: transform 1s;
+}
+
+.colorChic1 {
+  color: $colorChic1;
+}
+.colorChic2 {
+  color: $colorChic2;
+}
+.colorChic3 {
+  color: $colorChic3;
+}
+
+.plat {
+  font-size: 0.7rem;
+  padding-bottom: 2rem;
+
+  @include pad-only {
+    padding: 0 3rem 2rem 0;
+    text-align: left;
+  }
+}
+
+.prix {
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding-bottom: 3rem;
+}
+
+@include pad-only {
+  .sansPrix {
+    p {
+      text-align: left;
+      padding-left: 2rem;
+    }
+  }
+
+  .rotate {
+    transform: rotate(180deg);
+  }
+}
