@@ -1,7 +1,8 @@
 @charset "UTF-8";
 /*-- ORDRE D IMPORT DES PARTIELS --*/
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* Tous les éléments définis avec une largeur en pourcentage intégreront leurs margin et padding à leur pourcentage. */
@@ -127,13 +128,15 @@ textarea {
 }
 
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 img,
@@ -162,6 +165,7 @@ th:not([align]) {
 }
 
 header {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   width: 100%;
@@ -185,10 +189,16 @@ header {
 }
 
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background-color: green;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   /*CENTRE DANS LA HAUTEUR */
   position: fixed;
   bottom: 0;
@@ -201,46 +211,107 @@ footer a {
   color: #ffff01;
 }
 footer a:hover {
-  animation: wiggle 3s forwards;
+  -webkit-animation: wiggle 3s forwards;
+          animation: wiggle 3s forwards;
+}
+
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  3% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  4% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  5% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  6% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  7% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  8% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  9% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  11% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
 }
 
 @keyframes wiggle {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   3% {
-    transform: rotate(-2deg);
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
   }
   4% {
-    transform: rotate(2deg);
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
   }
   5% {
-    transform: rotate(-2deg);
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
   }
   6% {
-    transform: rotate(2deg);
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
   }
   7% {
-    transform: rotate(-2deg);
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
   }
   8% {
-    transform: rotate(2deg);
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
   }
   9% {
-    transform: rotate(-2deg);
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
   }
   10% {
-    transform: rotate(2deg);
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
   }
   11% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 }
 .btn {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   max-width: 60%;
   margin: 3rem auto 8rem auto;
   padding: 0.2rem 0.2rem 0.2rem 0.7rem;
@@ -254,7 +325,9 @@ footer a:hover {
   cursor: pointer;
 }
 .btn a:hover + .points {
-  transform: scale(1.15);
+  -webkit-transform: scale(1.15);
+      -ms-transform: scale(1.15);
+          transform: scale(1.15);
 }
 @media screen and (min-width: 415px) {
   .btn {
@@ -267,8 +340,14 @@ footer a:hover {
   display: inline-block;
   font-size: 1.3rem;
   color: #ffff01;
-  transform: scale(0.1);
+  -webkit-transform: scale(0.1);
+      -ms-transform: scale(0.1);
+          transform: scale(0.1);
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  -o-transition: transform 400ms;
   transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
 }
 
 body {
@@ -286,26 +365,37 @@ body {
 }
 
 .flex {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 @media screen and (min-width: 415px) {
   .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 @media screen and (min-width: 415px) {
   .flex--index {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 0 auto 0 auto;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
 .nav {
   margin: 1rem 0 0 0;
   padding: 2rem 0 0.3rem 0;
-  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
 }
 @media screen and (min-width: 415px) {
   .nav {
@@ -328,10 +418,10 @@ body {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c67412+0,6e4ccc+100 */
   background: #41963c;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #41963c 0%, #90d867 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #41963c 0%, #90d867 100%);
   /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#41963c), to(#90d867));
+  background: -o-linear-gradient(left, #41963c 0%, #90d867 100%);
   background: linear-gradient(to right, #41963c 0%, #90d867 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#c67412", endColorstr="#6e4ccc",GradientType=1 );
@@ -344,11 +434,21 @@ body {
   font-family: "arvobold_italic";
   opacity: 1;
   cursor: pointer;
-  transform: scale(1);
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
   /*--je pars de 100% --*/
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
   transition-property: transform;
+  transition-property: transform, -webkit-transform;
   /*-- applique la propriété transform à la transition --*/
+  -webkit-transition: opacity 300ms 150ms, -webkit-transform 1s;
+  transition: opacity 300ms 150ms, -webkit-transform 1s;
+  -o-transition: transform 1s, opacity 300ms 150ms;
   transition: transform 1s, opacity 300ms 150ms;
+  transition: transform 1s, opacity 300ms 150ms, -webkit-transform 1s;
 }
 @media screen and (min-width: 800px) {
   .nav__bgPalette--linkPalette {
@@ -357,7 +457,9 @@ body {
 }
 .nav__bgPalette--linkPalette:hover {
   opacity: 0.5;
-  transform: scale(1.25);
+  -webkit-transform: scale(1.25);
+      -ms-transform: scale(1.25);
+          transform: scale(1.25);
   /*--j'arrive à 125% --*/
 }
 .nav__bgNote {
@@ -370,11 +472,21 @@ body {
   font-family: "berkshire_swashregular";
   opacity: 1;
   cursor: pointer;
-  transform: scale(1);
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
   /*--je pars de 100% --*/
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
   transition-property: transform;
+  transition-property: transform, -webkit-transform;
   /*-- applique la propriété transform à la transition --*/
+  -webkit-transition: opacity 300ms 150ms, -webkit-transform 1s;
+  transition: opacity 300ms 150ms, -webkit-transform 1s;
+  -o-transition: transform 1s, opacity 300ms 150ms;
   transition: transform 1s, opacity 300ms 150ms;
+  transition: transform 1s, opacity 300ms 150ms, -webkit-transform 1s;
 }
 @media screen and (min-width: 800px) {
   .nav__bgNote--linkNote {
@@ -383,7 +495,9 @@ body {
 }
 .nav__bgNote--linkNote:hover {
   opacity: 0.5;
-  transform: scale(1.25);
+  -webkit-transform: scale(1.25);
+      -ms-transform: scale(1.25);
+          transform: scale(1.25);
   /*--j'arrive à 125% --*/
 }
 .nav__bgChic {
@@ -393,10 +507,10 @@ body {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c67412+0,6e4ccc+100 */
   background: #c67412;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #c67412 0%, #6e4ccc 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #c67412 0%, #6e4ccc 100%);
   /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#c67412), to(#6e4ccc));
+  background: -o-linear-gradient(left, #c67412 0%, #6e4ccc 100%);
   background: linear-gradient(to right, #c67412 0%, #6e4ccc 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#c67412", endColorstr="#6e4ccc",GradientType=1 );
@@ -409,11 +523,21 @@ body {
   font-family: "amerika_regular";
   opacity: 1;
   cursor: pointer;
-  transform: scale(1);
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
   /*--je pars de 100% --*/
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
   transition-property: transform;
+  transition-property: transform, -webkit-transform;
   /*-- applique la propriété transform à la transition --*/
+  -webkit-transition: opacity 300ms 150ms, -webkit-transform 1s;
+  transition: opacity 300ms 150ms, -webkit-transform 1s;
+  -o-transition: transform 1s, opacity 300ms 150ms;
   transition: transform 1s, opacity 300ms 150ms;
+  transition: transform 1s, opacity 300ms 150ms, -webkit-transform 1s;
 }
 @media screen and (min-width: 800px) {
   .nav__bgChic--linkChic {
@@ -422,7 +546,9 @@ body {
 }
 .nav__bgChic--linkChic:hover {
   opacity: 0.5;
-  transform: scale(1.25);
+  -webkit-transform: scale(1.25);
+      -ms-transform: scale(1.25);
+          transform: scale(1.25);
   /*--j'arrive à 125% --*/
 }
 .nav__bgDelice {
@@ -432,10 +558,10 @@ body {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c67412+0,6e4ccc+100 */
   background: #0231df;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #0231df 0%, #ff8dfb 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #0231df 0%, #ff8dfb 100%);
   /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#0231df), to(#ff8dfb));
+  background: -o-linear-gradient(left, #0231df 0%, #ff8dfb 100%);
   background: linear-gradient(to right, #0231df 0%, #ff8dfb 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#c67412", endColorstr="#6e4ccc",GradientType=1 );
@@ -448,11 +574,21 @@ body {
   font-family: "alluraregular";
   opacity: 1;
   cursor: pointer;
-  transform: scale(1);
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
   /*--je pars de 100% --*/
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
   transition-property: transform;
+  transition-property: transform, -webkit-transform;
   /*-- applique la propriété transform à la transition --*/
+  -webkit-transition: opacity 300ms 150ms, -webkit-transform 1s;
+  transition: opacity 300ms 150ms, -webkit-transform 1s;
+  -o-transition: transform 1s, opacity 300ms 150ms;
   transition: transform 1s, opacity 300ms 150ms;
+  transition: transform 1s, opacity 300ms 150ms, -webkit-transform 1s;
 }
 @media screen and (min-width: 800px) {
   .nav__bgDelice--linkDelice {
@@ -461,7 +597,9 @@ body {
 }
 .nav__bgDelice--linkDelice:hover {
   opacity: 0.5;
-  transform: scale(1.25);
+  -webkit-transform: scale(1.25);
+      -ms-transform: scale(1.25);
+          transform: scale(1.25);
   /*--j'arrive à 125% --*/
 }
 
@@ -504,7 +642,8 @@ body {
     width: 80%;
     margin: 8rem auto 8rem auto;
     padding: 2rem 2rem 5rem 2rem;
-    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
   }
 }
 .menu--bcgChic {
@@ -529,10 +668,10 @@ h1 {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c67412+0,6e4ccc+100 */
   background: #c67412;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #c67412 0%, #6e4ccc 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #c67412 0%, #6e4ccc 100%);
   /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#c67412), to(#6e4ccc));
+  background: -o-linear-gradient(left, #c67412 0%, #6e4ccc 100%);
   background: linear-gradient(to right, #c67412 0%, #6e4ccc 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#c67412", endColorstr="#6e4ccc",GradientType=1 );
@@ -545,10 +684,10 @@ h1 {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c67412+0,6e4ccc+100 */
   background: #0231df;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #0231df 0%, #ff8dfb 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #0231df 0%, #ff8dfb 100%);
   /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#0231df), to(#ff8dfb));
+  background: -o-linear-gradient(left, #0231df 0%, #ff8dfb 100%);
   background: linear-gradient(to right, #0231df 0%, #ff8dfb 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#c67412", endColorstr="#6e4ccc",GradientType=1 );
@@ -561,10 +700,10 @@ h1 {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c67412+0,6e4ccc+100 */
   background: #41963c;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #41963c 0%, #90d867 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #41963c 0%, #90d867 100%);
   /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#41963c), to(#90d867));
+  background: -o-linear-gradient(left, #41963c 0%, #90d867 100%);
   background: linear-gradient(to right, #41963c 0%, #90d867 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#c67412", endColorstr="#6e4ccc",GradientType=1 );
@@ -586,16 +725,32 @@ h1 {
   cursor: pointer;
 }
 .sousTitre__name:hover > .filet {
-  transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
   transition-property: transform;
+  transition-property: transform, -webkit-transform;
   /*-- applique la propriété transform à la transition --*/
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  -o-transition: transform 1s;
   transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
 }
 @media screen and (min-width: 415px) {
   .sousTitre {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .sousTitre img {
     height: 1rem;
@@ -609,8 +764,12 @@ h1 {
   height: 1px;
   margin: 0.5rem auto 0 auto;
   background-color: rgba(111, 12, 12, 0.5);
-  transform: scaleX(0);
-  transform-origin: left;
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
 }
 
 .colorChic1 {
@@ -649,8 +808,10 @@ h1 {
   }
 
   .rotate {
-    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3N0eWxlLmNzcyIsIi4uL3N0eWxlLnNjc3MiLCIuLi8xYmFzZS9femVyby5zY3NzIiwiLi4vMWJhc2UvX2ZvbnQuc2NzcyIsIi4uLzFiYXNlL19yZXNldC5zY3NzIiwiLi4vM2xheW91dHMvX2hlYWRlci5zY3NzIiwiLi4vMnV0aWxzL192YXJpYWJsZXMuc2NzcyIsIi4uLzFiYXNlL19yZXNwb25zaXZlLnNjc3MiLCIuLi8zbGF5b3V0cy9fZm9vdGVyLnNjc3MiLCIuLi80Y29tcG9uZW50cy9fYnRuLnNjc3MiLCIuLi8ydXRpbHMvX2Z1bmN0aW9ucy5zY3NzIiwiLi4vMnV0aWxzL19taXhpbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxnQkFBZ0I7QUNBaEIsb0NBQUE7QUNBQTtFQUNFLDhCQUFBO1VBQUEsc0JBQUE7QUZHRjs7QUVGRSxzSEFBQTtBQUVGO0VBQ0UscUJBQUE7QUZJRjs7QUdUQSxxRkFBQTtBQUVBO0VBQ0Usd0NBQUE7RUFDQSx5Q0FBQTtFQUNBLGdOQUFBO0VBR0EsbUJBQUE7RUFDQSxrQkFBQTtBSFNGO0FHTkE7RUFDRSw2QkFBQTtFQUNBLHlDQUFBO0VBQ0EscU1BQUE7RUFHQSxtQkFBQTtFQUNBLGtCQUFBO0FITUY7QUdIQTtFQUNFLGtDQUFBO0VBQ0EseUNBQUE7RUFDQSwwTUFBQTtFQUdBLG1CQUFBO0VBQ0Esa0JBQUE7QUhHRjtBR0FBLGdGQUFBO0FBQ0EsZ0ZBQUE7QUFDQSxnRkFBQTtBQUVBLHFGQUFBO0FBRUE7RUFDRSxxQ0FBQTtFQUNBLHVEQUFBO0VBQ0EsdVBBQUE7RUFLQSxtQkFBQTtFQUNBLGtCQUFBO0FISkY7QUdPQSxnRkFBQTtBQUNBLGdGQUFBO0FBQ0EsZ0ZBQUE7QUFFQSxxRkFBQTtBQUVBO0VBQ0UsNEJBQUE7RUFDQSxzTkFBQTtFQUlBLG1CQUFBO0VBQ0Esa0JBQUE7QUhWRjtBR2FBLGdGQUFBO0FBQ0EsZ0ZBQUE7QUFDQSxnRkFBQTtBQUNBLHFGQUFBO0FBRUE7RUFDRSw4QkFBQTtF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K0Isc0RBQUE7RUFDL0Isb0NBQUE7QVgrZkY7QUM5WEU7RVU3SEEsaUhBQUE7RUFDQSxtQkwxQ2M7RUswQ2MsaUJBQUE7RUFLekIsYUFBQTtFQUtBLDRCQUFBO0VBQ0gscUZBQUE7RUFBQSw4REFBQTtFQUFBLCtEQUFBO0VBSUcscURBQUE7RUFDSCxtSEFBQTtFQUFxSCxVQUFBO0VBQ3JILDZCQUFBO0VBQStCLHNEQUFBO0VBQy9CLG9DQUFBO0FYd2ZGOztBQ3pZQTtFQUNFLHVCQUFBO0FENFlGO0FDMVlFO0VBQ0UsWUFBQTtFQUNBLGtCQUFBO0FENFlKO0FDellFO0VBQ0UsaUJBQUE7RVV4R0YsZUFBQTtBWG9mRjtBV25mRTtFQUNFLDRCQUFBO01BQUEsd0JBQUE7VUFBQSxvQkFBQTtFQUNBLDhDQUFBO0VBQUEsc0NBQUE7RUFBQSxpQ0FBQTtFQUFBLDhCQUFBO0VBQUEsaURBQUE7RUFBZ0Msd0RBQUE7RUFDaEMsd0NBQUE7RUFBQSxnQ0FBQTtFQUFBLDJCQUFBO0VBQUEsd0JBQUE7RUFBQSw4Q0FBQTtBWHNmSjtBTy9rQkU7RU5vTEY7SUFjSSxvQkFBQTtJQUFBLG9CQUFBO0lBQUEsYUFBQTtJQUNBLHlCQUFBO1FBQUEsc0JBQUE7WUFBQSxtQkFBQTtJQUNBLHdCQUFBO1FBQUEscUJBQUE7WUFBQSx1QkFBQTtFRGlaRjtFQy9ZRTtJQUNFLFlBQUE7SUFDQSxtQkFBQTtFRGlaSjtBQUNGOztBQzdZQTtFQUNFLGNBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQTtFQUNBLDBCQUFBO0VBQ0Esd0NBQUE7RUFDQSw0QkFBQTtNQUFBLHdCQUFBO1VBQUEsb0JBQUE7RUFDQSw4QkFBQTtNQUFBLDBCQUFBO1VBQUEsc0JBQUE7QURnWkY7O0FDNVlBO0VBQ0UsY0twTlc7QU5tbUJiOztBQzdZQTtFQUNFLGNLdE5XO0FOc21CYjs7QUM5WUE7RUFDRSxjS3hOVztBTnltQmI7O0FDOVlBO0VBQ0UsaUJBQUE7RUFDQSxvQkFBQTtBRGlaRjtBT3JuQkU7RU5rT0Y7SUFLSSxzQkFBQTtJQUNBLGdCQUFBO0VEa1pGO0FBQ0Y7O0FDL1lBO0VBQ0UsaUJBQUE7RUFDQSxpQkFBQTtFQUNBLG9CQUFBO0FEa1pGOztBT2pvQkU7RU5vUEU7SUFDRSxnQkFBQTtJQUNBLGtCQUFBO0VEaVpKOztFQzdZQTtJQUNFLGlDQUFBO1FBQUEsNkJBQUE7WUFBQSx5QkFBQTtFRGdaRjtBQUNGIiwiZmlsZSI6InN0eWxlLmNzcyJ9 */
