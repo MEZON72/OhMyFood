@@ -130,6 +130,10 @@ body {
     height: auto;
     margin: 0 auto 0 auto;
   }
+
+  @include computer-only {
+    width: 4rem;
+  }
 }
 
 /*//////////////////////////////////////////////////////// CSS MENU FIRST MOBILE ////////////////////////////////////////////////////////*/
@@ -163,6 +167,14 @@ body {
 h1 {
   font-size: 1.5rem;
   padding: 3rem 0 1rem 0;
+
+  @include pad-only {
+    font-size: 2rem;
+  }
+
+  @include computer-only {
+    font-size: 4rem;
+  }
 }
 
 .name {
@@ -190,6 +202,14 @@ h1 {
   &__name {
     font-size: 1.2rem;
     @include sousTitre;
+
+    @include pad-only {
+      font-size: 1.6rem;
+    }
+
+    @include computer-only {
+      font-size: 2rem;
+    }
   }
 
   @include pad-only {
@@ -233,12 +253,28 @@ h1 {
     padding: 0 3rem 2rem 0;
     text-align: left;
   }
+
+  @include pad-only {
+    font-size: 1rem;
+  }
+
+  @include computer-only {
+    font-size: 1.3rem;
+  }
 }
 
 .prix {
   font-size: 0.7rem;
   font-weight: bold;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
+
+  @include pad-only {
+    font-size: 1rem;
+  }
+
+  @include computer-only {
+    font-size: 1.3rem;
+  }
 }
 
 @include pad-only {
@@ -246,6 +282,14 @@ h1 {
     p {
       text-align: left;
       padding-left: 2rem;
+    }
+
+    @include pad-only {
+      font-size: 1rem;
+    }
+
+    @include computer-only {
+      font-size: 1.3rem;
     }
   }
 
